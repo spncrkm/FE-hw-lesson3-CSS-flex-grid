@@ -1,0 +1,225 @@
+header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height:fit-content;
+    position: relative;
+}
+
+header div {
+    position: relative;
+    top: 150px;
+}
+
+.header-image {
+    background-image: url('./images/demonslayerheader.png');
+    width: 100%;
+    position: sticky;
+    height: 200px;
+    align-self: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-blend-mode:soft-light;  /* just testing out, don't see a difference */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    font-size: 20px;
+    font-family: fantasy;
+    color: aliceblue;
+    margin: 0 auto;
+}
+
+.desktop-menu li {
+    display:block;
+    list-style: none;
+    margin-right: 20px;
+}
+
+.desktop-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: fantasy;
+    font-size: 20px;
+    letter-spacing: -.01em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    display:block;
+    background-color: rgb(226, 222, 222);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100%;
+}
+
+.main-content {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+.article-container {
+    display:flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    width: 100%;
+    gap:20px;
+    
+}
+
+#welcome {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+    font-weight: bolder;
+    font-size: 40px;
+    color: blueviolet;
+
+}
+.article-box {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 20px);
+    box-sizing: border-box;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow: auto;
+    resize: vertical;
+    
+}
+
+.article-box:nth-child(odd) {
+    order: 1;
+}
+
+.article-box:nth-child(even) {
+    order: 2;
+}
+
+.article-image {
+    background-image: url('./images/demonslayerblog.webp');
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 200px;
+    max-width: 800px;
+}
+
+.article-text {
+    flex: 1;
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 3px;
+}
+
+.article-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+.article-text h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.article-text p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.article-text h3 {
+    margin: 0 0 10px;
+    font-size: 14;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.button-see-more {
+    height: 30px;
+    width: 100px;
+    align-self:center;
+    background-color: blue;
+    color: white;
+    border-radius: 7px;
+    box-shadow: 4px 4px 2px grey;
+    padding: 5px;
+    
+}
+
+.article-text button {
+    align-items:flex-end;
+}
+
+.menu-icon {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    display: block;
+    margin: 0 auto 5px;
+}
+
+.icon-see-more {
+    width: 24px;
+    height: 24px;
+    background-image: url('https://websiteipsum.com'); /* Line 35 button I actually couldn't figure out how to make button link to another webpage i just put this here to remind myself to try to figure that out */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#footer-nav p {
+    margin-left: 40%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+#footer-content {
+    font-weight: bolder;
+    color: rgb(65, 49, 122);
+    margin-left: 50px;
+}
+
+/* when screen size is 600px or less this action occurs */
+@media (max-width: 600px) {
+    .header-image {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header-image {
+        display: none;
+    }
+
+    #footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

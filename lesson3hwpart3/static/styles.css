@@ -1,0 +1,168 @@
+header {
+    display: grid;
+    grid-template-areas: 
+        "nav";
+    width: 100%;
+}
+
+.header-image {
+    background-image: url('./images/demonslayerheader.png');
+    width: 100%;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+}
+
+.nav-bar {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: 20px;
+    font-family: fantasy;
+    color: aliceblue;
+    padding-bottom: 20px;
+    margin-top: 130px;    /* didn't know how to push down this div so i just added margin */
+    
+}
+
+.desktop-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-right: 0;
+    padding: 0;
+}
+
+.desktop-menu li {
+    margin: 0 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(226, 222, 222);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100%;
+}
+
+.main-content {
+    display: grid;
+    grid-template-areas: 
+        "welcome"
+        "content";
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    min-height: 75vh;
+}
+
+#welcome {
+    grid-area: welcome;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-weight: bolder;
+    font-size: 40px;
+    color: blueviolet;
+}
+
+.article-container {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 400px 400px;
+    gap: 20px;
+    justify-content: center;
+    grid-auto-columns: auto;
+}
+
+.article-box {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.article-box img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-areas:
+            "welcome"
+            "content";
+        grid-template-columns: 1fr;
+    }
+
+    .article-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.site-footer {
+    display: grid;
+    grid-template-areas: 
+        "footer-content"
+        "footer-nav";
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    grid-gap: 10px;
+}
+
+#footer-content, .footer-nav {
+    grid-area: footer-content;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.footer-content ul li {
+    margin: 5px 0;
+}
+
+.footer-nav {
+    grid-area: footer-nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+    .header-image {
+        display: none;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+    }
+
+    #footer-content {
+        flex-direction: column;
+    }
+
+    .footer-content, .footer-nav {
+        flex-direction: column;
+    }
+}
